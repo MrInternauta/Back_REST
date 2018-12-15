@@ -33,6 +33,8 @@ export default class Server {
         this.io.on('connection', client=>{
             //Mostrar los usuario
             socket.lista_usuarios(client, this.io);
+
+            
             //conectar cliente
             socket.conectar_cliente(client, this.io);
             socket.config_user(client, this.io);
