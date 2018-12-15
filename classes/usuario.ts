@@ -5,7 +5,7 @@ export class Usuario {
     
     constructor(id: string){
         this.id = id;
-        this.nombre = 'Usuario' + this.id;
+        this.nombre = "sin-nombre";
         this.sala = 'sin-sala';
 
     }

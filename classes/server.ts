@@ -31,9 +31,11 @@ export default class Server {
         console.log("Escuchando conexiones - sockets");
         //cuando se concta un cliente
         this.io.on('connection', client=>{
+            //Mostrar los usuario
+            socket.lista_usuarios(client, this.io);
             //conectar cliente
-            socket.conectar_cliente(client);
-            socket.config_user(client);
+            socket.conectar_cliente(client, this.io);
+            socket.config_user(client, this.io);
 
             console.log(client.id);
 
@@ -41,7 +43,7 @@ export default class Server {
             socket.mensaje(client, this.io);
             
             //cuando se desconecta manda a llamar a la funcion
-            socket.desconectar(client);
+            socket.desconectar(client, this.io);
         })
 
     }

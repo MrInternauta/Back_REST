@@ -12,7 +12,7 @@ export class UsuarioLista {
          //Actualiza nombre
          public actualizarNombre(id: string, nombre: string) {
            this.lista.forEach(usuario => {
-             if ((usuario.id = id)) {
+             if ((usuario.id === id)) {
                usuario.nombre = nombre;
              }
            });
@@ -20,7 +20,7 @@ export class UsuarioLista {
            console.log(this.lista);
          }
          public ObtenerLista() {
-           return this.lista;
+           return this.lista.filter(usuario =>  usuario.nombre !== 'sin-nombre');
          }
          public GetUsuario(id: string) {
            return this.lista.find(usuario => usuario.id === id);
